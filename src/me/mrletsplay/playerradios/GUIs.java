@@ -217,10 +217,10 @@ public class GUIs {
 						if(r.isRunning()) idx = r.getCurrentIndex();
 						if(idx == -1) idx = 0;
 						
-//						int aIdx = event1.getRelativeIndex() + idx;
+						int aIdx = event1.getRelativeIndex() + idx;
 						int aIdx = event1.getAbsoluteIndex();
 						int sIdx = idx + aIdx - 3;
-//						int skip = (int) event1.getItems().stream().limit(aIdx).filter(i -> i == null).count();
+						int skip = (int) event1.getItems().stream().limit(aIdx).filter(i -> i == null).count();
 						Song s = SongManager.getSongByID(item);
 						if(s!=null) {
 							List<String> spl2 = StringUtils.wrapString("§7" + sIdx + " | "+s.getName()+" (ID: "+s.getID()+")", 50); // TODO: Idx
@@ -317,7 +317,7 @@ public class GUIs {
 						}
 					}
 					event.getGUI().refreshInstance(event.getPlayer());
-//					StationManager.updateStationGUI(r.getID(), fPIndex);
+					StationManager.updateStationGUI(r.getID(), fPIndex);
 				}else if(event.getClickType().equals(ClickType.RIGHT)) {
 					p.openInventory(GUIs.getStationIconGUI(p, id));
 				}
@@ -400,7 +400,7 @@ public class GUIs {
 			public void onAction(GUIElementActionEvent event) {
 				Player p = event.getPlayer();
 				int id = (int) event.getGUIHolder().getProperty(Main.pl, "station_id");
-//				RadioStation r = StationManager.getRadioStation(id);
+				RadioStation r = StationManager.getRadioStation(id);
 				if(Config.allow_station_name_edit || p.hasPermission(Config.PERM_RENAME_WHEN_DISABLED)) {
 					p.closeInventory();
 					p.sendMessage(Config.getMessage("station.rename"));
