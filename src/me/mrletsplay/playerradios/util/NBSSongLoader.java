@@ -108,7 +108,7 @@ public class NBSSongLoader {
 					layers.put(i, l);
 				}
 			}catch(Exception e) {
-				//Main.pl.getLogger().info("Failed to load layer names/volumes of \""+title+"\" ("+fIn.getName()+"), ignoring...");
+				Main.pl.getLogger().info("Failed to load layer names/volumes of \""+title+"\" ("+fIn.getName()+"), ignoring...");
 				for(int i = 0; i< songHeight; i++) {
 					Layer l = layers.get(i);
 					if(l!=null) {
