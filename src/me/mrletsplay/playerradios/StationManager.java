@@ -230,54 +230,54 @@ public class StationManager {
 		}
 	}
 	
-//	public static void updateStationGUI(int rID){
-//		for(Player pl : Bukkit.getOnlinePlayers()){
-//			String t = getInvType(pl);
-//			if(t.equals("radio station")){
-//				Inventory inv = pl.getOpenInventory().getTopInventory();
-//				GUIHolder holder = (GUIHolder) inv.getHolder();
-//				holder.getGui().refreshInstance(pl);
-//			}
-//		}
-//	}
-//	
-//	public static void updateStationsGUI(){
-//		for(Player pl : Bukkit.getOnlinePlayers()){
-//			String t = getInvType(pl);
-//			if(t.equals("radio stations")){
-//				Inventory inv = pl.getOpenInventory().getTopInventory();
-//				GUIHolder holder = (GUIHolder) inv.getHolder();
-//				holder.getGui().refreshInstance(pl);
-//			}
-//		}
-//	}
-//	
-//	public static void updateStationGUI(int rID, int index){
-//		for(Player pl : Bukkit.getOnlinePlayers()){
-//			String t = getInvType(pl);
-//			if(t.equals("radio station")){
-//				Inventory inv = pl.getOpenInventory().getTopInventory();
-//				GUIHolder holder = (GUIHolder) inv.getHolder();
-//				holder.getGui().refreshInstance(pl);
-//			}
-//		}
-//	}
-//	
-//	public static String getInvType(Inventory inv){
-//		if(GUIUtils.getGUI(inv) != null) {
-//			GUIHolder holder = (GUIHolder) inv.getHolder();
-//			String mode = (String) holder.getProperty("playerradios_type");
-//			return mode != null ? mode : "none";
-//		}
-//		return "none";
-//	}
-//	
-//	public static String getInvType(Player p){
-//		if(p.getOpenInventory()!=null && p.getOpenInventory().getTopInventory()!=null){
-//			return getInvType(p.getOpenInventory().getTopInventory());
-//		}else{
-//			return "none";
-//		}
-//	}
+	public static void updateStationGUI(int rID){
+		for(Player pl : Bukkit.getOnlinePlayers()){
+			String t = getInvType(pl);
+			if(t.equals("radio station")){
+				Inventory inv = pl.getOpenInventory().getTopInventory();
+				GUIHolder holder = (GUIHolder) inv.getHolder();
+				holder.getGui().refreshInstance(pl);
+			}
+		}
+	}
+	
+	public static void updateStationsGUI(){
+		for(Player pl : Bukkit.getOnlinePlayers()){
+			String t = getInvType(pl);
+			if(t.equals("radio stations")){
+				Inventory inv = pl.getOpenInventory().getTopInventory();
+				GUIHolder holder = (GUIHolder) inv.getHolder();
+				holder.getGui().refreshInstance(pl);
+			}
+		}
+	}
+	
+	public static void updateStationGUI(int rID, int index){
+		for(Player pl : Bukkit.getOnlinePlayers()){
+			String t = getInvType(pl);
+			if(t.equals("radio station")){
+				Inventory inv = pl.getOpenInventory().getTopInventory();
+				GUIHolder holder = (GUIHolder) inv.getHolder();
+				holder.getGui().refreshInstance(pl);
+			}
+		}
+	}
+	
+	public static String getInvType(Inventory inv){
+		if(GUIUtils.getGUI(inv) != null) {
+			GUIHolder holder = (GUIHolder) inv.getHolder();
+			String mode = (String) holder.getProperty("playerradios_type");
+			return mode != null ? mode : "none";
+		}
+		return "none";
+	}
+	
+	public static String getInvType(Player p){
+		if(p.getOpenInventory()!=null && p.getOpenInventory().getTopInventory()!=null){
+			return getInvType(p.getOpenInventory().getTopInventory());
+		}else{
+			return "none";
+		}
+	}
 
 }
